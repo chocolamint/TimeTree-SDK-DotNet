@@ -27,6 +27,27 @@ public class TimeTreeClientTest
             user);
     }
 
+    [Fact]
+    public async Task CanGetCalendars()
+    {
+        var client = CreateTimeTreeClient();
+
+        var calendars = (await client.GetCalendarsAsync(CancellationToken.None)).ToArray();
+
+        Assert.NotNull(calendars);
+        Assert.NotEqual(0, calendars.Length);
+        Assert.Multiple(
+            () => Assert.Matches(".+", calendars[0].Id),
+            () => Assert.Equal(TimeTreeEntityType.Calendar, calendars[0].Type),
+            () => Assert.NotNull(calendars[0].Attributes),
+            () => Assert.Matches(".+", calendars[0].Attributes.Name),
+            () => Assert.NotNull(calendars[0].Attributes.Description),
+            () => Assert.Matches("#[0-9a-fA-F]{6}", calendars[0].Attributes.Color),
+            () => Assert.NotEqual(default(DateTimeOffset), calendars[0].Attributes.CreatedAt)
+        );
+        Assert.Equal(Enumerable.Range(0, calendars.Length), calendars.Select(x => x.Attributes.Order));
+    }
+
     private static TimeTreeClient CreateTimeTreeClient()
     {
         var personnelAccessToken = Environment.GetEnvironmentVariable("PersonnelAccessToken")!;

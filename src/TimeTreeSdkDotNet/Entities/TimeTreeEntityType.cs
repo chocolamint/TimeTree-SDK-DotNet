@@ -9,4 +9,8 @@ public enum TimeTreeEntityType
     /// TimeTree user.
     /// </summary>
     User,
+    /// <summary>
+    /// TimeTree calendar.
+    /// </summary>
+    Calendar,
 }

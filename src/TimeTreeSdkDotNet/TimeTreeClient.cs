@@ -56,6 +56,24 @@ public class TimeTreeClient
         return content!.Data;
     }
 
+    /// <summary>
+    /// Retrieve list of calendars.
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+    /// <returns></returns>
+    public async Task<IEnumerable<TimeTreeEntity<TimeTreeCalendarAttribute>>> GetCalendarsAsync(CancellationToken cancellationToken)
+    {
+        using var request = new HttpRequestMessage(HttpMethod.Get, "/calendars");
+        SetAuthorization(request);
+
+        using var response = await _httpClient.SendAsync(request, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        var content = await response.Content.ReadFromJsonAsync<TimeTreeOkResponse<TimeTreeEntity<TimeTreeCalendarAttribute>[]>>(_jsonSeriazlizerOption, cancellationToken);
+        return content!.Data;
+    }
+
     private void SetAuthorization(HttpRequestMessage requestMessage) => requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
 
     private struct TimeTreeOkResponse<T>
