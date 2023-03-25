@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTreeSdkDotNet", "TimeTreeSdkDotNet\TimeTreeSdkDotNet.csproj", "{18BF2A90-BF7C-4237-A0A7-22B37E1C1A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTreeSdkDotNet.Tests", "TimeTreeSdkDotNet.Tests\TimeTreeSdkDotNet.Tests.csproj", "{9428CFCB-D1BE-4C8D-BF5A-E6F471CBAEFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18BF2A90-BF7C-4237-A0A7-22B37E1C1A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18BF2A90-BF7C-4237-A0A7-22B37E1C1A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18BF2A90-BF7C-4237-A0A7-22B37E1C1A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18BF2A90-BF7C-4237-A0A7-22B37E1C1A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9428CFCB-D1BE-4C8D-BF5A-E6F471CBAEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9428CFCB-D1BE-4C8D-BF5A-E6F471CBAEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9428CFCB-D1BE-4C8D-BF5A-E6F471CBAEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9428CFCB-D1BE-4C8D-BF5A-E6F471CBAEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63171019-30D7-4DFD-BC42-35CFEF6A5CC3}
+	EndGlobalSection
+EndGlobal
